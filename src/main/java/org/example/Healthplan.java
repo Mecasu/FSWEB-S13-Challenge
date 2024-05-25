@@ -4,21 +4,21 @@ import org.example.enums.Plan;
 
 public class Healthplan {
 
-    private long id;
+    private int id;
     private String name;
     private Plan plan;
 
-    public Healthplan(long id, String name, Plan plan) {
+    public Healthplan(int id, String name, Plan plan) {
         this.id = id;
         this.name = name;
         this.plan = plan;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

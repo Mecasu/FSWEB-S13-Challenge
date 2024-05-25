@@ -7,19 +7,28 @@ public class Employee {
     private String fullName;
     private String email;
     private String password;
-    private String[] healthplans;
+    private String[] healthPlans;
 
     public Employee(long id, String fullName, String email, String password, String[] healthplans) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.password = password;
-        this.healthplans = healthplans;
+        this.healthPlans = healthplans;
     }
 
     public void addHealthPlan(int index, String name) {
-
+        try {
+            if (healthPlans[index] == null) {
+                healthPlans[index] = name;
+            } else {
+                System.out.println("Index dolu.");
+            }
+        } catch (ArrayIndexOutOfBoundsException ex){
+            System.out.println("Error: ArrayIndexOutOfBoundsException");
+        }
     }
+
 
     @Override
     public String toString() {
@@ -28,7 +37,7 @@ public class Employee {
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", healthplans=" + Arrays.toString(healthplans) +
+                ", healthPlans=" + Arrays.toString(healthPlans) +
                 '}';
     }
 
@@ -64,11 +73,10 @@ public class Employee {
         this.password = password;
     }
 
-    public String[] getHealthplans() {
-        return healthplans;
+    public String[] getHealthPlans() {
+        return healthPlans;
     }
-
     public void setHealthplans(String[] healthplans) {
-        this.healthplans = healthplans;
+        this.healthPlans = healthplans;
     }
 }
